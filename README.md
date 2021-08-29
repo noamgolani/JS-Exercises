@@ -10,6 +10,5 @@ Cyber4s JS Exercises
 
   - You can find on Google the formula to find the solutions. Test your code on different a, b, c values (like 1, 5, 6 or 1, -1, -1)
 
-- **Q3** - Write a piece of code that calculates the absolute value of a given number,
-  - WITHOUT using Math.abs (though you still can use other Math methods).
-    Test your code on positive numbers, negative numbers, and zero
+- **Q3** - Write a piece of code that calculates the absolute value of a given number, WITHOUT using Math.abs (though you still can use other Math methods).
+  - Test your code on positive numbers, negative numbers, and zero
