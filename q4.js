@@ -7,7 +7,7 @@ function median(arr) {
 }
 
 function halfRange(arr) {
-  return range(arr.slice(Math.floor((arr.length - 1) / 2)));
+  return range(arr.slice(Math.floor(1 + (arr.length - 1) / 2)));
 }
 
 function doStatistics(arr) {
