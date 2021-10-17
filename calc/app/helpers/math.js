@@ -12,25 +12,38 @@ const operators = {
   "~": (_, b) => Math.sqrt(b),
 };
 
+function cleanStr(str) {
+  const trimed = str.trim();
+  let striped = trimed;
+  while (striped[0] === "(" && striped[striped.length - 1] === ")") {
+    striped = striped.slice(1, striped.length - 1); // removes wrapping () if any
+  }
+  return striped;
+}
+
 function parseStrToTree(str) {
-  const striped = str.trim();
-  console.log("Parsing: " + str);
+  const striped = cleanStr(str);
+  console.log("Parsing: " + striped);
   const opGroups = [
     ["+", "-"],
     ["X", "/"],
     ["%", "~"], // ~ for sqrt
   ];
+
   for (const opGroup of opGroups) {
-    for (let i = 0; i < str.length; i++) {
-      const char = str[i];
-      if (opGroup.includes(char)) {
-        const [left, right] = callLeftRight(str, i);
+    let bracketCount = 0;
+    for (let i = 0; i < striped.length; i++) {
+      const char = striped[i];
+      if (char === "(") bracketCount++;
+      else if (char === ")") bracketCount--;
+      else if (opGroup.includes(char) && bracketCount === 0) {
+        const [left, right] = callLeftRight(striped, i);
         console.log("Calculating: " + left + char + right);
         return operators[char](left, right);
       }
     }
   }
-  return parseFloat(str);
+  return parseFloat(striped);
 }
 
 function callLeftRight(str, index) {
