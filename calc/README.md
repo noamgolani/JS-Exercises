@@ -7,6 +7,8 @@
 The most interesting part of this assignment, is the **Equation parsing**.
 To solve this problem i used a **binary tree recursive algorithm**, that recives a string finds the "lowest order" operation aveliable for split and calls to child processes of the function. Left and right for the chosen operator.
 
+#### The Parsing process
+
 Lets say we recive an equation: `5 + 6 X (4 + Sqrt(3 + 12)) + 4`
 The binary tree algorithm will parse it in this way:
 
@@ -34,6 +36,26 @@ Right: `6 X (4 + Sqrt(3 + 12)) + 4`: {
   }
   Right: `4`
 }
+```
+
+#### Backtracing
+
+Then it will backtrace ans simply do the math. This is a simpler tree example: `5 X (3 - 4)`
+
+```
+Operator: `X`
+Left: `5`
+Right: `3 - 4`:{
+  Operator: `-`
+  Left: `3`
+  Right: `4`
+}
+
+Operator: `X`
+Left: `5`
+Right: `-1`
+
+Result: `-5`
 ```
 
 ### [Link](./dist/index.html) to final product
