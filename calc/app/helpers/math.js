@@ -1,4 +1,5 @@
 function calc(str) {
+  const noSqrt = str.replace("&radic;", "~");
   return parseStrToTree(str);
 }
 
