@@ -1,4 +1,4 @@
-# JS-Exercises
+# JS-Exercises - [Github-Pages](https://noamgolani.github.io/JS-Exercises/)
 
 Cyber4s JS Exercises
 
