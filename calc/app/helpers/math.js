@@ -23,13 +23,9 @@ function cleanStr(str) {
   return striped;
 }
 
-function parseStrToTree(father, str) {
+function parseStrToTree(str) {
   const striped = cleanStr(str);
-  console.log("Parsing: " + striped);
-  father.append(`
-    <div class="node">${striped}</div>
-  `);
-  const newFather = father.find(".node");
+  //console.log("Parsing: " + striped);
   const opGroups = [
     ["+", "-"],
     ["X", "/"],
@@ -43,8 +39,8 @@ function parseStrToTree(father, str) {
       if (char === "(") bracketCount++;
       else if (char === ")") bracketCount--;
       else if (opGroup.includes(char) && bracketCount === 0) {
-        const [left, right] = callLeftRight(newFather, striped, i);
-        console.log("Calculating: " + left + char + right);
+        const [left, right] = callLeftRight(striped, i);
+        //console.log("Calculating: " + left + char + right);
         return operators[char](left, right);
       }
     }
@@ -52,11 +48,11 @@ function parseStrToTree(father, str) {
   return parseFloat(striped);
 }
 
-function callLeftRight(father, str, index) {
+function callLeftRight(str, index) {
   const leftStr = str.slice(0, index);
   const rightStr = str.slice(index + 1);
-  const leftTree = parseStrToTree(father, leftStr);
-  const rightTree = parseStrToTree(father, rightStr);
+  const leftTree = parseStrToTree(leftStr);
+  const rightTree = parseStrToTree(rightStr);
   return [leftTree, rightTree];
 }
 
