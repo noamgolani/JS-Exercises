@@ -2,6 +2,8 @@
 
 Cyber4s JS Exercises
 
+- **[Calc](./calc/README.md)** | _17/10/21_ - Implement a calculator using es6 modules.
+
 - **[Q1](./q1.js)** | _29/8/21_ - Write a piece of code that computes the sum of digits of a 3-digit number.
 
   - Test your code on several different 3-digit numbers (for example 666, 300, 725). Hint: you might need to use Math.floor...

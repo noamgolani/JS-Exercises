@@ -1,6 +1,8 @@
+import $ from "jquery";
+
 function calc(str) {
   const noSqrt = str.replace("&radic;", "~");
-  return parseStrToTree(str);
+  return parseStrToTree($("#binTree"), str);
 }
 
 const operators = {
@@ -21,9 +23,13 @@ function cleanStr(str) {
   return striped;
 }
 
-function parseStrToTree(str) {
+function parseStrToTree(father, str) {
   const striped = cleanStr(str);
   console.log("Parsing: " + striped);
+  father.append(`
+    <div class="node">${striped}</div>
+  `);
+  const newFather = father.find(".node");
   const opGroups = [
     ["+", "-"],
     ["X", "/"],
@@ -37,7 +43,7 @@ function parseStrToTree(str) {
       if (char === "(") bracketCount++;
       else if (char === ")") bracketCount--;
       else if (opGroup.includes(char) && bracketCount === 0) {
-        const [left, right] = callLeftRight(striped, i);
+        const [left, right] = callLeftRight(newFather, striped, i);
         console.log("Calculating: " + left + char + right);
         return operators[char](left, right);
       }
@@ -46,14 +52,22 @@ function parseStrToTree(str) {
   return parseFloat(striped);
 }
 
-function callLeftRight(str, index) {
+function callLeftRight(father, str, index) {
   const leftStr = str.slice(0, index);
   const rightStr = str.slice(index + 1);
-  const leftTree = parseStrToTree(leftStr);
-  const rightTree = parseStrToTree(rightStr);
+  const leftTree = parseStrToTree(father, leftStr);
+  const rightTree = parseStrToTree(father, rightStr);
   return [leftTree, rightTree];
 }
 
 export default {
   calc,
 };
+
+class TreeNode {
+  constructor(info, left, right) {
+    this.info = info;
+    this.left = left;
+    this.right = right;
+  }
+}
