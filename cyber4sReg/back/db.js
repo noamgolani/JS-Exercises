@@ -1,4 +1,4 @@
-export default validStudent = {
+module.exports = {
   nameNotEqual: ['Ang', 'Momo', 'Appa', 'Nina', 'Superman', 'Robinhood'],
   minAge: 18,
   maxAge: 35,
