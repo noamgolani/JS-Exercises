@@ -31,6 +31,8 @@ module.exports = {
     new ESLintPlugin({
       fix: true,
     }),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
   ],
 };
