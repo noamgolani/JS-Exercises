@@ -4,4 +4,4 @@ import './styles/style.css';
 import 'bootstrap';
 import $ from 'jquery';
 
-$('body').append('Hello World');
+$('body').append(' World');
