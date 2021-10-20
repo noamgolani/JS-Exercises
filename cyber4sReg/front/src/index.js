@@ -25,8 +25,10 @@ $('#sbmt').on('click', (event) => {
       age,
       ability,
     })
-    .then((res) => {
-      console.log(res);
+    .then(() => {
+      alert('Success');
     })
-    .catch(console.log);
+    .catch((err) => {
+      if (err.response) alert(`${err.response.status}: ${err.response.statusText}`);
+    });
 });
