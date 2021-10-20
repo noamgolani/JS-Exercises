@@ -9,7 +9,7 @@ $('form').on('submit', (event) => {
   event.preventDefault();
 });
 
-$('#sbmt').one('click', (event) => {
+$('#sbmt').on('click', (event) => {
   event.preventDefault();
   const name = $('input#name').val();
   const age = $('input#age').val();
@@ -28,5 +28,5 @@ $('#sbmt').one('click', (event) => {
     .then((res) => {
       console.log(res);
     })
-    .catch((err) => console.log);
+    .catch(console.log);
 });
