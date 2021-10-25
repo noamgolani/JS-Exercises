@@ -1,6 +1,6 @@
 # Books
 
-## [JS file](./Cat.js)
+## [Book JS](./Book.js), [BookList JS](./BookList.js)
 
 ``` 
 	to start easly:
