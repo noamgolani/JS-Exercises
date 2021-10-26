@@ -1,66 +1,68 @@
-export default class BookList{
-	constructor(books, currentIndex = 0){
+export default class BookList {
+	constructor(books, currentIndex = 0) {
 		this.books = books;
 		this.currentIndex = 0;
 	}
 
-	add(book){
+	add(book) {
 		this.books.push(book);
 	}
 
-	finishCurrentBook(){
+	finishCurrentBook() {
 		this.current.read = true;
 		this.current.readDate = new Date(Date.now());
 		this.currentIndex = this.nextIndex;
 	}
 
-	get current(){
+	get current() {
 		return this.books[this.currentIndex];
 	}
 
-	get lastIndex(){
+	get lastIndex() {
 		let index = this.currentIndex - 1;
-		while(index >= 0){
-			if(this.books[index].read) return index;
+		while (index >= 0) {
+			if (this.books[index].read) return index;
 		}
 		return -1; // no "Last Readed"
 	}
 
-	get last(){
+	get gast() {
 		return this.books[this.lastIndex];
 	}
 
-	get nextIndex(){
+	get nextIndex() {
 		let index = this.currentIndex + 1;
-		while(!this.books[index].read){
+		while (!this.books[index].read) {
 			index++;
 		}
 		return index;
 	}
 
-	get next(){
+	get next() {
 		return this.books[this.nextIndex];
-	}	
+	}
 
-	get read(){
+	get read() {
 		return this.books.filter((book) => book.read).length;
 	}
 
-	get notRead(){
+	get notRead() {
 		return this.books.filter((book) => !book.read).length;
 	}
 
-	printStatus(){
+	printStatus() {
 		console.log({
 			current: this.current.toString(),
 			next: this.next.toString(),
 			last: this.last?.toString(),
 			read: this.read,
-			'not read': this.notRead,
-		})
+			"not read": this.notRead,
+		});
 	}
 
-	print(){
-		this.books.forEach((book) => {book.print()});
+	print() {
+		this.books.forEach((book) => {
+			book.print();
+		});
 	}
 }

@@ -1,6 +1,9 @@
 # JS-Exercises - [Github-Pages](https://noamgolani.github.io/JS-Exercises/)
 
 Cyber4s JS Exercises
+
+- **[Guitar Shop](./guitar-shop/README.md)** | _26/10/21_ - Implement a `ClassicGuitar` class with inheritance.
+
 - **[Books](./books/README.md)** | _25/10/21_ - Implement a `BookList` class.
 
 - **[Cat](./cat/README.md)** | _25/10/21_ - Implement a `Cat` class.

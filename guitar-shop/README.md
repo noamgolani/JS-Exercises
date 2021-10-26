@@ -1,5 +1,7 @@
-# [main JS](./index.js)
-## [ClassisGuitar JS](./ClassicGuitar.js) [ElectricGuitar JS](./ElectricGuitar.js) [BassGuitar JS](./BassGuitar.js) 
+# Guitar Shop
+
+## [main JS](./index.js)
+### [ClassisGuitar JS](./ClassicGuitar.js) [ElectricGuitar JS](./ElectricGuitar.js) [BassGuitar JS](./BassGuitar.js) 
 
 ```
    for easy start:
