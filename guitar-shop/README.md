@@ -1,6 +1,13 @@
 # [main JS](./index.js)
 ## [ClassisGuitar JS](./ClassicGuitar.js) [ElectricGuitar JS](./ElectricGuitar.js) [BassGuitar JS](./BassGuitar.js) 
 
+```
+   for easy start:
+   
+   -  npm i
+   -  npx nodemon index.js
+
+```
 
 # Assignment
 
