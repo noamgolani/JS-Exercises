@@ -2,6 +2,8 @@
 
 Cyber4s JS Exercises
 
+- **[Soccer Team](./soccer-team/README.md)** | _26/10/21_ - Implement Soccer related class's with inheritance.
+- 
 - **[Guitar Shop](./guitar-shop/README.md)** | _26/10/21_ - Implement a `ClassicGuitar` class with inheritance.
 
 - **[Books](./books/README.md)** | _25/10/21_ - Implement a `BookList` class.
