@@ -1,6 +1,9 @@
 # JS-Exercises - [Github-Pages](https://noamgolani.github.io/JS-Exercises/)
 
 Cyber4s JS Exercises
+- **[Books](./books/README.md)** | _25/10/21_ - Implement a `BookList` class.
+
+- **[Cat](./cat/README.md)** | _25/10/21_ - Implement a `Cat` class.
 
 - **[Calc](./calc/README.md)** | _17/10/21_ - Implement a calculator using es6 modules.
 
